@@ -1,4 +1,4 @@
-from typing import Tuple, List
+from typing import Tuple, List, Dict
 
 import yfinance as yf
 import pandas as pd
@@ -43,6 +43,16 @@ class Asset:
         self.hurst_scale_factor = c
         return h, c, d
 
+    def toJSON(self) -> Dict:
+        if self.hurst_exponent is None:
+            _ = self.get_hurst()
+        return {
+            'ticker': self.ticker_symbol,
+            'name': self.name,
+            'hurst_scale_factor': self.hurst_scale_factor,
+            'hurst_exponent': self.hurst_exponent,
+        }
+
 
 def main():
     assets = list()
@@ -61,10 +71,8 @@ def main():
     assets.append(
         Asset('TSLA', 'Tesla, Inc. (TSLA)', 1277818200, 1731085300)
     )
-
-    assets = sorted(assets, key=lambda a: a.get_hurst()[0], reverse=True)
-    for a in assets:
-        print(f'{a.ticker_symbol} | {a.name} | {round(a.hurst_exponent, 2)} {round(a.hurst_scale_factor, 2)}')
+    df = pd.DataFrame([j.toJSON() for j in assets])
+    print(df.sort_values(by='hurst_exponent', ascending=False).to_markdown())
 
 
 if __name__ == '__main__':
