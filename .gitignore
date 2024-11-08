@@ -1,4 +1,8 @@
+# CSV files in the db
 DBcsv/*csv
+
+# Pycharm stuff
+.idea/
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Python template
