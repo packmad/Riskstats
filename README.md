@@ -1,6 +1,6 @@
 # Riskstats
 
-Attribution: the code for the Hurst's exponent is taken from https://github.com/Mottl/hurst
+
 
 
 ## Hurst 
@@ -21,15 +21,7 @@ Interpretation of Hurst exponent H:
   + If H>1: Indicates a time series with long-term memory (super-diffusive behavior).
 
 
-The constant c is a scaling factor related to the amplitude or “scale” of fluctuations in the time series. 
-While H reflects the pattern or structure of the series, c gives additional context to the magnitude of these fluctuations.
-Unlike H, the constant c is not directly tied to the type of correlation (i.e., persistence or mean reversion), but rather to the intensity of the changes.
-A larger c indicates larger fluctuations in absolute terms, while a smaller c suggests smaller fluctuations.
+## Historical Value‑at‑Risk (VaR)
 
-Interpretation of Hurst constant c:
-
-+ Small (c<0.5): Low volatility, small fluctuations.
-+ Moderate (0.5<c<1): Average volatility, moderate fluctuations.
-+ Large (c>1): High volatility, large fluctuations.
-+ Very Large (c>2): Extreme volatility, very large fluctuations.
+It is a non‑parametric way to estimate how much a portfolio could lose, at a chosen confidence level, over a given horizon, by looking directly at its own past performance rather than assuming any particular return distribution.
 
