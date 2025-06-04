@@ -1,4 +1,3 @@
-import yfinance as yf
 from asset_manager import AssetsManager
 
 
