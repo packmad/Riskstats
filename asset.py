@@ -223,7 +223,7 @@ class Asset:
             'ticker': self.ticker_symbol,
             'name': self.name,
             'Hurst exponent': self.get_hurst(),
-            'Historical Value-at-Risk (VaR)': self.historical_var(),
+            'Historical Value-at-Risk (VaR 97.5%)': self.historical_var(),
             'Expected Shortfall (ES)': self.expected_shortfall(),
             'Peaks-over-Threshold (POT) VaR and ES': self.pot_var_es(),
             'Katz Fractal Dimension': self.katz_fractal_dimension(),

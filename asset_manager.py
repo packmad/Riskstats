@@ -42,6 +42,9 @@ class AssetsManager:
             Asset('F00000WACN.PA', 'Social Active Tempéré Solidaire')  # r2
         )
         self.assets.append(
+            Asset('0P00016NIO.F', 'Social Active Tempéré Solidaire C')  # r2
+        )
+        self.assets.append(
             Asset('0P00016NKU.F', 'CM-AM Perspective Certitude')  # r2
         )
         self.assets.append(
